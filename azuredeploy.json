@@ -4,9 +4,7 @@
     "parameters": {
         
     },
-    "variables": {
-        "templatebaseUrl": "https://raw.githubusercontent.com/prathap9000/ARM-Template-devops/master/"
-    },
+   
     "resources": [
         {
             "type": "Microsoft.Resources/deployments",
