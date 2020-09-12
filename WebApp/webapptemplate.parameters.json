@@ -10,9 +10,9 @@
         },
         "webappprefix": {
             "value": "webapp"
-        },
+        },        
         "webappname1": {
-            "value": "__securestring1__"
+            "value": "webapp202"
         }
     }
 }
