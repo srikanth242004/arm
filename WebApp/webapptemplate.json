@@ -17,7 +17,28 @@
         "webappname1": {
             "defaultValue": "webapp1",
             "type": "String"
-        }
+        },
+        "skuName": {
+            "type": "string",
+            "defaultValue": "F1",
+            "allowedValues": [
+              "F1",
+              "D1",
+              "B1",
+              "B2",
+              "B3",
+              "S1",
+              "S2",
+              "S3",
+              "P1",
+              "P2",
+              "P3",
+              "P4"
+            ],
+            "metadata": {
+              "description": "Describes plan's pricing tier and instance size. Check details at https://azure.microsoft.com/en-us/pricing/details/app-service/"
+            }
+          }
     },
     "variables": {
         "aspName"   : "[toLower( concat( parameters('aspprefix'),'-', uniqueString(resourceGroup().id),'-',parameters('aspname1') ) )]",
@@ -31,9 +52,9 @@
             "name": "[variables('aspName')]",
             "location": "[variables('location')]",
             "sku": {
-                "name": "F1",
+                "name": "[parameters('skuName')]",
                 "tier": "Free",
-                "size": "F1",
+                "size": "[parameters('skuName')]",
                 "family": "F",
                 "capacity": 1
             },
