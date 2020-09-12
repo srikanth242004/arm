@@ -1,0 +1,79 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "aspname1": {
+            "defaultValue": "windows",
+            "type": "String"
+        },
+        "aspprefix": {
+            "defaultValue": "asp",
+            "type": "String"
+        },
+        "webappprefix": {
+            "defaultValue": "webapp",
+            "type": "String"
+        },
+        "webappname1": {
+            "defaultValue": "webapp1",
+            "type": "String"
+        }
+    },
+    "variables": {
+        "aspName"   : "[toLower( concat( parameters('aspprefix'),'-', uniqueString(resourceGroup().id),'-',parameters('aspname1') ) )]",
+        "webAppName": "[toLower( concat( parameters('webappprefix'),'-', uniqueString(resourceGroup().id),'-',parameters('webappname1') ) )]",
+        "location"  : "[resourceGroup().location]"
+      },
+    "resources": [
+        {
+            "type": "Microsoft.Web/serverfarms",
+            "apiVersion": "2018-02-01",
+            "name": "[variables('aspName')]",
+            "location": "[variables('location')]",
+            "sku": {
+                "name": "F1",
+                "tier": "Free",
+                "size": "F1",
+                "family": "F",
+                "capacity": 1
+            },
+            "kind": "app",
+            "properties": {
+                "perSiteScaling": false,
+                "maximumElasticWorkerCount": 1,
+                "isSpot": false,
+                "reserved": false,
+                "isXenon": false,
+                "hyperV": false,
+                "targetWorkerCount": 0,
+                "targetWorkerSizeId": 0
+            }
+        },
+        {
+            "type": "Microsoft.Web/sites",
+            "apiVersion": "2018-11-01",
+            "name": "[variables('webAppName')]",
+            "location": "[variables('location')]",
+            "kind": "app",
+            "dependsOn": [
+                "[variables('aspName')]"
+              ],           
+            "properties": {
+                "enabled": true,                
+                "serverFarmId": "[variables('aspName')]",
+                "reserved": false,
+                "isXenon": false,
+                "hyperV": false,
+                "siteConfig": {},
+                "scmSiteAlsoStopped": false,
+                "clientAffinityEnabled": true,
+                "clientCertEnabled": false,
+                "hostNamesDisabled": false,
+                "containerSize": 0,
+                "dailyMemoryTimeQuota": 0,
+                "httpsOnly": true,
+                "redundancyMode": "None"
+            }
+        }
+    ]
+}
