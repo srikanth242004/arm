@@ -6,10 +6,10 @@
             "value": "windows"
         },
         "aspprefix": {
-            "value": null
+            "value": "asp"
         },
         "webappprefix": {
-            "value": null
+            "value": "webapp"
         },
         "webappname1": {
             "value": "webapp20200912"
