@@ -15,11 +15,11 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {                   
-                    "uri": "[toLower( concat( variables('templatebaseUrl'),'WebApp/webapptemplate.json' )]",
+                    "uri": "[concat( variables('templatebaseUrl'),'WebApp/webapptemplate.json' )]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parametersLink": {                  
-                    "uri": "[toLower( concat( variables('templatebaseUrl'),'WebApp/parameters.json' )]",
+                    "uri": "[concat( variables('templatebaseUrl'),'WebApp/parameters.json' )]",
                     "contentVersion": "1.0.0.0"
                 }
             }
