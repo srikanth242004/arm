@@ -123,32 +123,6 @@
                 "httpsOnly": true,
                 "redundancyMode": "None"
             }
-        },
-        {
-            "type": "Microsoft.Web/sites",
-            "apiVersion": "2018-11-01",
-            "name": "[variables('webAppName2')]",
-            "location": "[variables('location')]",
-            "kind": "app",
-            "dependsOn": [
-                "[variables('aspName')]"
-              ],           
-            "properties": {
-                "enabled": true,                
-                "serverFarmId": "[variables('aspName')]",
-                "reserved": false,
-                "isXenon": false,
-                "hyperV": false,
-                "siteConfig": {},
-                "scmSiteAlsoStopped": false,
-                "clientAffinityEnabled": true,
-                "clientCertEnabled": false,
-                "hostNamesDisabled": false,
-                "containerSize": 0,
-                "dailyMemoryTimeQuota": 0,
-                "httpsOnly": true,
-                "redundancyMode": "None"
-            }
         }
     ]
 }
