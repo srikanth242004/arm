@@ -43,7 +43,7 @@
     "variables": {
         "aspName"   : "[toLower( concat( parameters('aspprefix'),'-', uniqueString(resourceGroup().id),'-',parameters('aspname1') ) )]",
         "webAppName": "[toLower( concat( parameters('webappprefix'),'-', uniqueString(resourceGroup().id),'-',parameters('webappname1') ) )]",
-        "webAppName1": "[toLower( concat( parameters('webappprefix'),'-', uniqueString(resourceGroup().id),'-',parameters('webappname1') ) )]",
+        "webAppName1": "[toLower( concat( parameters('webappprefix'),'-', uniqueString(resourceGroup().id),'-',parameters('webappname1'),'-1' ) )]",
         "location"  : "[resourceGroup().location]"
       },
     "resources": [
