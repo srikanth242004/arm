@@ -19,7 +19,7 @@
                     "contentVersion": "1.0.0.0"
                 },
                 "parametersLink": {                  
-                    "uri": "[concat( variables('templatebaseUrl'),'WebApp/parameters.json' )]",
+                    "uri": "[concat( variables('templatebaseUrl'),'WebApp/webapptemplate.parameters.json' )]",
                     "contentVersion": "1.0.0.0"
                 }
             }
