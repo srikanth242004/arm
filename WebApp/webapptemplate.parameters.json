@@ -12,7 +12,7 @@
             "value": "webapp"
         },        
         "webappname1": {
-            "value": "Onyxweb1"
+            "value": "__webappname1__"
         }
     }
 }
