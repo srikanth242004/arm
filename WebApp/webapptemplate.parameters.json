@@ -12,7 +12,7 @@
             "value": "webapp"
         },        
         "webappname1": {
-            "value": "webapp202"
+            "value": "__securestring1__"
         }
     }
 }
