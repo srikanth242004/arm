@@ -19,7 +19,7 @@
                     "contentVersion": "1.0.0.0"
                 },
                 "parametersLink": {                  
-                    "relativePath": "[concat( variables('templatebaseUrl'),'WebApp/webapptemplate.parameters.json' )]",
+                    "uri": "[concat( variables('templatebaseUrl'),'WebApp/webapptemplate.parameters.json' )]",
                     "contentVersion": "1.0.0.0"
                 }
             }
