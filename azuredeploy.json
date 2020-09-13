@@ -4,9 +4,7 @@
     "parameters": {
         
     },
-    "variables": {
-        "templatebaseUrl": "$(System.DefaultWorkingDirectory)/_waniyaml24-CI/drop/"
-    },
+  
     "resources": [
         {
             "type": "Microsoft.Resources/deployments",
@@ -15,11 +13,11 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "relativePath": "[concat( variables('templatebaseUrl'),'WebApp/webapptemplate.json' )]",
+                    "relativePath": "['WebApp/webapptemplate.json' )]",
                     "contentVersion": "1.0.0.0"
                 },
                 "parametersLink": {                  
-                    "uri": "[concat( variables('templatebaseUrl'),'WebApp/webapptemplate.parameters.json' )]",
+                    "uri": "['WebApp/webapptemplate.parameters.json' )]",
                     "contentVersion": "1.0.0.0"
                 }
             }
